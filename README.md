@@ -12,14 +12,8 @@ Note: Collabreate uses a dedicated VM powered by Vagrant. If you already have Va
 1. Download VirtualBox at https://www.virtualbox.org/wiki/Downloads. Windows users must download version 4.3.12 as there is a bug with the current version that prevents the VM to boot.
 2. Download Vagrant at http://www.vagrantup.com/downloads.html.
 3. After you have downloaded the installers, install VirtualBox first. Then install Vagrant. Confirm all dialogs that appear and restart your machine as prompted.
-4. Start your operating system's terminal environment (i.e. powershell, cmd, Terminal) and type
-```
-vagrant box add laravel/homestead
-```
-5. Allow that command to finish. Next, set up Laravel Homestead into a central `Homestead` directory:
-```
-git clone https://github.com/laravel/homestead.git Homestead
-```
+4. Start your operating system's terminal environment (i.e. powershell, cmd, Terminal) and type `vagrant box add laravel/homestead`
+5. Allow that command to finish. Next, set up Laravel Homestead into a central `Homestead` directory: `git clone https://github.com/laravel/homestead.git Homestead`
 6. Edit the `Homestead.yaml` file in the `Homestead` directory by entering in your SSH key into the `authorize: ...` and `keys: ...` fields. You may need to run `ssh-keygen -t rsa -C "email@example.com"` to generate an SSH key. `ssh-keygen` works on Unix based systems. For Windows, installing `git` and using the `Git Bash` shell from that installation will allow you to also generate an SSH key. PuTTY or PuTTYgen work as well. If you have a Github for Windows installation available on your machine, you may already have files called `github_rsa.pub` and `github_rsa`, which you can specify in the `Homestead.yaml` file.
 7. Create a new directory called `collabreate` **outside** of the `Homestead` directory. This can be done by running `cd ..` and then `mkdir collabreate`. Then run `cd collabreate` to go into the directory.
 8. Download Collabreate by running `git clone https://github.com/michaeltli/collabreate-next` **in** the `collabreate` folder.
