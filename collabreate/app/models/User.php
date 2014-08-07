@@ -4,9 +4,10 @@ use Illuminate\Auth\UserTrait;
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
+use LaravelBook\Ardent\Ardent;
 
-class User extends Eloquent implements UserInterface, RemindableInterface {
-
+class User extends Ardent implements UserInterface, RemindableInterface
+{
 	use UserTrait, RemindableTrait;
 
 	/**
@@ -23,4 +24,33 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $hidden = array('password', 'remember_token');
 
+	public static $rules = [
+		"fullname" => "required",
+		"username" => "required|alpha_dash|min:2|unique:users",
+		"email" => "required|email|unique:users",
+		"password" => "required|min:6|confirmed",
+		"password_confirmation" => "min:6"
+	];
+
+	public $autoPurgeRedundantAttributes = true;
+
+	public function getRememberToken()
+	{
+		return $this->remember_token;
+	}
+
+	public function setRememberToken($value)
+	{
+		$this->remember_token = $value;
+	}
+
+	public function getRememberTokenName()
+	{
+		return 'remember_token';
+	}
+
+	public function project()
+	{
+		return $this->hasMany('Project');
+	}
 }
