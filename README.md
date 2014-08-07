@@ -23,5 +23,5 @@ Note: Collabreate uses a dedicated VM powered by Vagrant. If you already have Va
 12. Next, start the VM by running `vagrant up`.
 13. After everything finishes loading, run `vagrant ssh` with a password of `vagrant`. If Vagrant tells you that you do not have an SSH client available, Secure Shell Google Chrome App works well. Be sure to enter in the correct SSH details to connect.
 14. Type `cd Code/collabreate` followed by `composer install`. The latter command will take a few minutes.
-15. Finally, in your local environment browser, navigate to `http://collabreate.app:8080` and enjoy Collabreate, albeit with no users.
+15. Finally, in your local environment browser, navigate to `http://collabreate.app:8000` and enjoy Collabreate, albeit with no users.
 16. maybe make this installation how to a little bit more easier with a script that does all of this for you.
