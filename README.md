@@ -19,7 +19,7 @@ Note: Collabreate uses a dedicated VM powered by Vagrant. If you already have Va
 8. Download Collabreate by running `git clone https://github.com/michaeltli/collabreate-next` **in** the `collabreate` folder.
 9. Go back to the `Homestead` directory. In `Homestead.yaml`, under the `folders: ...` section, change `map: ...` to `map: Path/to/your/collabreate/directory` (not that actual path, specify where your `collabreate` directory is).
 10. Under the `sites: ...` section, change `map: ...` to `map: collabreate.app` and `to: ...` to `to: /home/vagrant/Code/collabreate/collabreate/public`.
-11. Next, go into your operating system's **hosts** file. Under Windows, it is found under `C:\Windows\system32\drivers\etc\hosts`. Under OS X, it is ask kyle for this. Add `127.0.0.1   collabreate.app` (note the spaces) to the hosts file.
+11. Next, go into your operating system's **hosts** file. Under Windows, it is found under `C:\Windows\system32\drivers\etc\hosts`. Under OS X, it is `/private/etc/hosts`. Add `127.0.0.1   collabreate.app` (note the spaces) to the hosts file.
 12. Next, start the VM by running `vagrant up`.
 13. After everything finishes loading, run `vagrant ssh` with a password of `vagrant`. If Vagrant tells you that you do not have an SSH client available, Secure Shell Google Chrome App works well. Be sure to enter in the correct SSH details to connect.
 14. Type `cd Code/collabreate` followed by `composer install`. The latter command will take a few minutes.
